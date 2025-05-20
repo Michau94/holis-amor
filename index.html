@@ -4,6 +4,12 @@
   integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
   crossorigin="anonymous"
 />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+  rel="stylesheet"
+/>
 
 <script
   src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"
@@ -15,6 +21,7 @@
 <style>
   @charset "UTF-8";
   body {
+    font-family: "Montserrat";
     color: #203662;
     background: #ecf0f1;
     display: flex;
@@ -23,11 +30,16 @@
   }
 
   #error {
-    display: none;
+    /* display: none; */
+    opacity: 0;
+    transition: 2s ease-in-out;
+    transform: translateY(0);
   }
   #error.error {
-    display: block;
+    /* display: block; */
     color: red;
+    opacity: 1;
+    transform: translateY(50%);
   }
 
   #password-check-btn:hover {
@@ -302,9 +314,15 @@
   #title,
   #message,
   #hint,
-  #acceso {
-    transition: opacity 2s ease;
+  #acceso,
+  #win {
+    text-align: center;
+    transition: all 2s ease;
     opacity: 0;
+  }
+
+  #win {
+    font-size: 35px;
   }
 
   #title.show {
@@ -327,10 +345,20 @@
     transition-delay: 7s;
   }
 
+  #acceso.hide {
+    opacity: 0;
+  }
+
   #error {
     padding: 20px;
     text-align: center;
     font-size: 30px;
+    transition-duration: 1s;
+  }
+
+  #win.show {
+    opacity: 1;
+    transform: translateY(-50%);
   }
 </style>
 
@@ -339,17 +367,9 @@
 <div id="login" class="">
   <h1 id="title">💕Holis, Mi amor precioso💕</h1>
 
-  <h2 id="message">En la manana nos despertamos...</h2>
-  <h2 id="hint">Casi como... 🛫</h2>
+  <h3 id="message">En la mañana nos despertamos ...😴</h3>
+  <h3 id="hint">A veces también volando...🛫</h3>
   <div id="acceso" class="p-2 d-flex justify-content-center align-items-center">
-    <!-- <input
-      type="text"
-      class="form-control rounded-pill"
-      placeholder="Inserisci il codice"
-      aria-label="Inserisci il codice"
-    aria-describedby="button-addon2"
-    /> -->
-
     <div class="input-wrapper p-2">
       <input
         id="password-check"
@@ -360,21 +380,8 @@
       />
     </div>
 
-    <!-- <button
-      style="
-        background-color: rgba(255, 128, 73, 1);
-        color: #fff;
-        font-size: 18px;
-      "
-      class="mx-2 px-4 rounded-pill border border-0"
-      type="button"
-      id="password-check-btn"
-    >
-      Invia
-    </button> -->
-
     <button class="button" id="password-check-btn">
-      Confirmar
+      Confirmado!
       <div class="hoverEffect">
         <div></div>
       </div>
@@ -382,10 +389,16 @@
   </div>
 
   <div id="error" class="py-4"></div>
+  <div id="win" class="py-4">Listo patroncita 😍</div>
 </div>
 
 <div id="juego">
-  <iframe src="https://www.jigsawplanet.com/?rc=play&amp;pid=04580360f9c9&amp;view=iframe" style="width:100%;height:600px" frameborder="0" allowfullscreen></iframe>s
+  <iframe
+    src="https://www.jigsawplanet.com/?rc=play&amp;pid=04580360f9c9&amp;view=iframe"
+    style="width: 100%; height: 600px"
+    frameborder="0"
+    allowfullscreen
+  ></iframe>
 </div>
 
 <script>
@@ -400,6 +413,7 @@
   var message = document.getElementById("message");
   var hint = document.getElementById("hint");
   var acceso = document.getElementById("acceso");
+  var win = document.getElementById("win");
 
   setTimeout(() => {
     title.classList.add("show");
@@ -415,6 +429,8 @@
   var errors = ["AAA Mijitica!😦", "QUE TAAAAAL😂", "No se Rick no se!🤔"];
   var randomIndex = Math.random();
   _inputSubmit.addEventListener("click", () => {
+    error.classList.remove("error");
+
     var hash = CryptoJS.SHA256(_input.value);
     var hashString = hash.toString(CryptoJS.enc.Hex);
     var checkString = check;
@@ -422,9 +438,15 @@
     if (hashString == check) {
       error.classList.remove("error");
       console.log("token corretto");
-      login.classList.add("hide");
-      juego.classList.add("show");
-      console.log("game begin");
+      error.classList.remove("error");
+      win.classList.add("show");
+      acceso.classList.remove("show");
+      acceso.classList.add("hide");
+      setTimeout(() => {
+        login.classList.add("hide");
+        juego.classList.add("show");
+        console.log("game begin");
+      }, 4000);
     } else {
       error.classList.add("error");
       error.innerText = errors[numCas(0, errors.length - 1)];
