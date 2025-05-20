@@ -18,8 +18,8 @@
     color: #203662;
     background: #ecf0f1;
     display: flex;
-    align-items:center;
-    justify-content:center;
+    align-items: center;
+    justify-content: center;
   }
 
   #error {
@@ -211,137 +211,137 @@
 
   /* // button */
 
-  /* From Uiverse.io by Wendell47 */ 
-.button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 15px 30px;
-  border: 0;
-  position: relative;
-  overflow: hidden;
-  border-radius: 10rem;
-  transition: all 0.02s;
-  font-weight: bold;
-  cursor: pointer;
-  color: rgb(37, 37, 37);
-  z-index: 0;
-  box-shadow: 0 0px 7px -5px rgba(0, 0, 0, 0.5);
-}
-
-.button:hover {
-  background: rgb(193, 228, 248);
-  color: rgb(33, 0, 85);
-}
-
-.button:active {
-  transform: scale(0.97);
-}
-
-.hoverEffect {
-  position: absolute;
-  bottom: 0;
-  top: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1;
-}
-
-.hoverEffect div {
-  background: rgb(222, 0, 75);
-  background: linear-gradient(
-    90deg,
-    rgba(222, 0, 75, 1) 0%,
-    rgba(191, 70, 255, 1) 49%,
-    rgba(0, 212, 255, 1) 100%
-  );
-  border-radius: 40rem;
-  width: 10rem;
-  height: 10rem;
-  transition: 0.4s;
-  filter: blur(20px);
-  animation: effect infinite 3s linear;
-  opacity: 0.5;
-}
-
-.button:hover .hoverEffect div {
-  width: 8rem;
-  height: 8rem;
-}
-
-@keyframes effect {
-  0% {
-    transform: rotate(0deg);
+  /* From Uiverse.io by Wendell47 */
+  .button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 30px;
+    border: 0;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10rem;
+    transition: all 0.02s;
+    font-weight: bold;
+    cursor: pointer;
+    color: rgb(37, 37, 37);
+    z-index: 0;
+    box-shadow: 0 0px 7px -5px rgba(0, 0, 0, 0.5);
   }
 
-  100% {
-    transform: rotate(360deg);
+  .button:hover {
+    background: rgb(193, 228, 248);
+    color: rgb(33, 0, 85);
   }
-}
 
-#juego{
-  display:none;
-}
+  .button:active {
+    transform: scale(0.97);
+  }
 
-#juego.show{
-  display:block;
-  width:100%;
-}
+  .hoverEffect {
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+  }
 
-#login.hide{
-  display:none;
-}
-#error{
-  padding:20px;
-  text-align:center;
-}
+  .hoverEffect div {
+    background: rgb(222, 0, 75);
+    background: linear-gradient(
+      90deg,
+      rgba(222, 0, 75, 1) 0%,
+      rgba(191, 70, 255, 1) 49%,
+      rgba(0, 212, 255, 1) 100%
+    );
+    border-radius: 40rem;
+    width: 10rem;
+    height: 10rem;
+    transition: 0.4s;
+    filter: blur(20px);
+    animation: effect infinite 3s linear;
+    opacity: 0.5;
+  }
 
-#title,#message, #hint, #acceso{
-  transition:opacity 2s ease;
-  opacity:0;
+  .button:hover .hoverEffect div {
+    width: 8rem;
+    height: 8rem;
+  }
 
-}
+  @keyframes effect {
+    0% {
+      transform: rotate(0deg);
+    }
 
-#title.show{
-  opacity:1;
-  transition-delay:2s;
-}
+    100% {
+      transform: rotate(360deg);
+    }
+  }
 
- #message.show{
-  opacity:1;
-  transition-delay:3s;
-}
+  #juego {
+    display: none;
+  }
 
-#hint.show {
-  opacity:1;
-  transition-delay:5s;
+  #juego.show {
+    display: block;
+    width: 100%;
+  }
 
-}
+  #login.hide {
+    display: none;
+  }
+  #error {
+    padding: 20px;
+    text-align: center;
+  }
 
-#acceso.show {
-  opacity:1;
-  transition-delay:7s;
-}
+  #title,
+  #message,
+  #hint,
+  #acceso {
+    transition: opacity 2s ease;
+    opacity: 0;
+  }
 
-#error{
-  padding:20px;
-  text-align:center;
-  font-size:30px;
-}
+  #title.show {
+    opacity: 1;
+    transition-delay: 2s;
+  }
+
+  #message.show {
+    opacity: 1;
+    transition-delay: 3s;
+  }
+
+  #hint.show {
+    opacity: 1;
+    transition-delay: 5s;
+  }
+
+  #acceso.show {
+    opacity: 1;
+    transition-delay: 7s;
+  }
+
+  #error {
+    padding: 20px;
+    text-align: center;
+    font-size: 30px;
+  }
 </style>
 
 <!-- <input type="text" id="password-check" /> -->
 <!-- <input type="button" id="password-check-btn" value="submit" /> -->
 <div id="login" class="">
-
   <h1 id="title">💕Holis, Mi amor precioso💕</h1>
 
-  <h2 id="message">En la manana nos despertamos... </h2>
+  <h2 id="message">En la manana nos despertamos...</h2>
   <h2 id="hint">Casi como... 🛫</h2>
-  <div id='acceso' class=" p-2 d-flex justify-content-center align-items-center">
+  <div id="acceso" class="p-2 d-flex justify-content-center align-items-center">
     <!-- <input
       type="text"
       class="form-control rounded-pill"
@@ -381,50 +381,39 @@
     </button>
   </div>
 
-  <div id="error" class="py-4">
-
-   
-  </div>
+  <div id="error" class="py-4"></div>
 </div>
 
 <div id="juego">
-  <iframe frameBorder="0" style="border: 0;width:100%;height:100%" src="https://im-a-puzzle.com/share/1ddc58072d6c719?embed=true&showAds=false&showNav=false&showSolve=false"></iframe>
+  <iframe src="https://www.jigsawplanet.com/?rc=play&amp;pid=04580360f9c9&amp;view=iframe" style="width:100%;height:600px" frameborder="0" allowfullscreen></iframe>s
 </div>
 
-
 <script>
+  function numCas(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
 
-function numCas(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
-  var juego= document.getElementById('juego');
-  var login = document.getElementById('login');
+  var juego = document.getElementById("juego");
+  var login = document.getElementById("login");
   var error = document.getElementById("error");
   var title = document.getElementById("title");
   var message = document.getElementById("message");
   var hint = document.getElementById("hint");
   var acceso = document.getElementById("acceso");
 
-
-
   setTimeout(() => {
-    title.classList.add('show')
-    message.classList.add('show')
-    hint.classList.add('show')
-    acceso.classList.add('show')
-
-
-    
+    title.classList.add("show");
+    message.classList.add("show");
+    hint.classList.add("show");
+    acceso.classList.add("show");
   }, 2000);
-
 
   var check =
     "6bb2aad85be0aa0ecf3abccf6154340d4eade54b75fcefaf143d920d71bc5139";
   var _input = document.getElementById("password-check");
   var _inputSubmit = document.getElementById("password-check-btn");
-  var errors= ['AAA Mijitica!😦', 'QUE TAAAAAL😂', 'No se Rick no se!🤔', ]
-  var randomIndex = Math.random()
+  var errors = ["AAA Mijitica!😦", "QUE TAAAAAL😂", "No se Rick no se!🤔"];
+  var randomIndex = Math.random();
   _inputSubmit.addEventListener("click", () => {
     var hash = CryptoJS.SHA256(_input.value);
     var hashString = hash.toString(CryptoJS.enc.Hex);
@@ -433,12 +422,12 @@ function numCas(min, max) {
     if (hashString == check) {
       error.classList.remove("error");
       console.log("token corretto");
-      login.classList.add('hide');
-      juego.classList.add('show');
+      login.classList.add("hide");
+      juego.classList.add("show");
       console.log("game begin");
     } else {
       error.classList.add("error");
-      error.innerText=errors[numCas(0, errors.length - 1)]
+      error.innerText = errors[numCas(0, errors.length - 1)];
       console.log("token errato");
     }
   });
